@@ -19,12 +19,13 @@ help()
   echo "h     Print this help"
   echo "r     Raw data directory"
   echo "e     conda environment defaults to illumina23"
+  echo "t     number of threads to use defaults to 8"
   echo
 }
 
 #set options
 conda_environment="illumina23"
-
+threads=8
 #look for flags
 while getopts ":h:r:e:t:" opt; do
   case $opt in
@@ -388,11 +389,7 @@ fi
 #To do
 #run this and then take the results to Rstudio to do limma
 #limma should be used for DE but has to be done with R script
-#normalisation in limma
 # glm to add the RIN data
-#save to github
-echo -e "\n### . ### \n"
-
 echo -e "\n### Fin ### \n"
 
 conda deactivate
